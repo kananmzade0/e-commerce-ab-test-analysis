@@ -1,0 +1,16 @@
+column,role,dtype,n_unique,min,max,description
+recency,Pre-treatment,int64,12,1,12,Months since last purchase
+history_segment,Pre-treatment,str,7,,,Past-year spend bucket (raw text)
+history,Pre-treatment,float64,34833,29.99,3345.93,Past-year spend ($)
+mens,Pre-treatment,int64,2,0,1,1 = bought men's merchandise in past year
+womens,Pre-treatment,int64,2,0,1,1 = bought women's merchandise in past year
+zip_code,Pre-treatment,str,3,,,Urban / Suburban / Rural
+newbie,Pre-treatment,int64,2,0,1,1 = new customer in past 12 months
+channel,Pre-treatment,str,3,,,Channels purchased from in past year: Phone / Web / Multichannel
+segment,Treatment,str,3,,,Mens E-Mail / Womens E-Mail / No E-Mail
+visit,Outcome,int64,2,0,1,1 = visited the site within 2 weeks
+conversion,Outcome,int64,2,0,1,1 = purchased within 2 weeks
+spend,Outcome,float64,429,0.0,499.0,Amount spent within 2 weeks ($)
+hist_seg_id,Derived,int64,7,1,7,History bucket number 1–7
+hist_min,Derived,float64,7,0.0,1000.0,Bucket lower bound ($)
+hist_max,Derived,float64,6,100.0,1000.0,Bucket upper bound ($); empty = open-ended
